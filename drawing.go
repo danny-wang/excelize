@@ -862,7 +862,9 @@ func (f *File) drawChartSeriesMarker(i int, formatSet *formatChart) *cMarker {
 			},
 		}
 	}
-	chartSeriesMarker := map[string]*cMarker{Scatter: marker}
+	lineMarker := &cMarker{Symbol: &attrValString{Val: stringPtr("none")}}
+	chartSeriesMarker := map[string]*cMarker{Scatter: marker, Line: lineMarker}
+	//chartSeriesMarker := map[string]*cMarker{Scatter: marker}
 	return chartSeriesMarker[formatSet.Type]
 }
 
